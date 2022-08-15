@@ -9,13 +9,11 @@
  * Text Domain: library-post-types
  */
 
-require 'includes/CPTs/CPT_Definition.php';
-require 'includes/CPTs/CPT_Register.php';
-require 'includes/CPTs/Definition_Book.php';
-require 'includes/CPTs/Definition_Hardware.php';
-require 'includes/CPTs/Definition_Music.php';
-require 'includes/CPTs/Definition_Periodical.php';
-require 'includes/CPTs/Definition_Video.php';
+spl_autoload_register( function( $class ) {
+	if ( file_exists( __DIR__ . '/includes/CPTs/' . $class . '.php' ) ) {
+		require 'includes/CPTs/' . $class . '.php';
+	}
+} );
 
 $cpt_register = new CPT_Register();
 $cpt_register
