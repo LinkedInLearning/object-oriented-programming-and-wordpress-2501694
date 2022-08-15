@@ -3,11 +3,11 @@
 if ( ! function_exists( 'cookie_plugin_register_cpt' ) ) {
 	function cookie_plugin_register_cpt() {
 		register_post_type(
-			'cookie',
+			COOKIE_PLUGIN_CPT_SLUG,
 			[
 				'public' => true,
 				'labels' => [
-					'name' => __( 'Cookies', 'cookie-plugin' ),
+					'name' => __( 'Biscuits', 'cookie-plugin' ),
 				],
 			]
 		);

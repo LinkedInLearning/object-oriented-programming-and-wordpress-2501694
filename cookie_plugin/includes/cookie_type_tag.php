@@ -1,13 +1,13 @@
 <?php
 
-if ( ! function_exists( 'cookie_plugin_register_type_tag' ) ) {
+if ( ! function_exists( 'cookie_plugin_register_type_tax' ) ) {
 	function cookie_plugin_register_type_tag() {
 		register_taxonomy(
 			'cookie_type',
-			'cookie',
+			COOKIE_PLUGIN_CPT_SLUG,
 			[
 				'labels' => [
-					'name' => __( 'Cookie Type', 'cookie-plugin')
+					'name' => __( 'Biscuit Type', 'cookie-plugin')
 				]
 			]
 		);

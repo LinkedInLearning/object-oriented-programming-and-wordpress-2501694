@@ -10,6 +10,10 @@
 * Text Domain: cookie-plugin
 */
 
+if ( ! defined('COOKIE_PLUGIN_CPT_SLUG')) {
+	define( 'COOKIE_PLUGIN_CPT_SLUG', 'biscuit' );
+}
+
 // Register CPT & Tax
 require_once 'includes/cookie_cpt.php';
 require_once 'includes/cookie_type_tag.php';
