@@ -1,7 +1,5 @@
 <?php
 
-error_log( 'we have required the Definition_Book.php file' );
-
 class Definition_Book implements CPT_Definition {
 
 	public function name(): string {
