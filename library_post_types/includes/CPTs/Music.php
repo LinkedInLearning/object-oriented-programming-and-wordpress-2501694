@@ -1,24 +1,21 @@
 <?php
 
-error_log( 'we have required the Definition_Book.php file' );
+namespace Library_Post_Types\CPTs;
 
-class Definition_Book implements CPT_Definition {
-
+class Music implements Definition {
 	public function name(): string {
-		return 'Book';
+		return 'Music';
 	}
-
 	public function slug(): string {
-		return 'book';
+		return 'music';
 	}
-
 	public function args(): array {
 		return [
 			'public' => true,
 		];
 	}
-
 	public function labels(): array {
 		return [];
 	}
+
 }

@@ -1,19 +1,24 @@
 <?php
 
-class Definition_Music implements CPT_Definition {
+namespace Library_Post_Types\CPTs;
+
+class Book implements Definition {
+
 	public function name(): string {
-		return 'Music';
+		return 'Book';
 	}
+
 	public function slug(): string {
-		return 'music';
+		return 'book';
 	}
+
 	public function args(): array {
 		return [
 			'public' => true,
 		];
 	}
+
 	public function labels(): array {
 		return [];
 	}
-
 }

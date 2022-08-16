@@ -9,18 +9,17 @@
  * Text Domain: library-post-types
  */
 
-spl_autoload_register( function( $class ) {
-	if ( file_exists( __DIR__ . '/includes/CPTs/' . $class . '.php' ) ) {
-		require 'includes/CPTs/' . $class . '.php';
-	}
-} );
+use Library_Post_Types\CPTs\Register as CPT_Register;
+use Library_Post_Types\CPTs\{Book,Hardware,Music,Periodical,Video};
+
+require __DIR__ . '/vendor/autoload.php';
 
 $cpt_register = new CPT_Register();
 $cpt_register
-	->add( new Definition_Book() )
-	->add( new Definition_Hardware() )
-	->add( new Definition_Music() )
-	->add( new Definition_Periodical() )
-	->add( new Definition_Video() );
+	->add( new Book() )
+	->add( new Hardware() )
+	->add( new Music() )
+	->add( new Periodical() )
+	->add( new Video() );
 
 add_action( 'init', [ $cpt_register, 'register' ] );
