@@ -14,14 +14,7 @@ class User_Import {
 	}
 
 	public function save() {
-		$users = $this->random_user_api->get_users();
-
-		$progress = \WP_CLI\Utils\make_progress_bar( 'Creating users', count( $users ), $interval = 100 );
-		foreach ( $users as $user ) {
-			$progress->tick();
-			wp_insert_user( $user );
-		}
-		$progress->finish();
+		var_dump( $this->random_user_api->get_users() );
 	}
 
 }
