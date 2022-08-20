@@ -1,5 +1,5 @@
 {
   "autoload": {
-    "psr-4": {"Class_Anatomy\\": "src/"}
+    "psr-4": {"Anatomy_Of_A_Class\\": "src/"}
   }
 }
