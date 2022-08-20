@@ -20,7 +20,7 @@ class Example {
 	/**
 	 * @var string Example property
 	 */
-	private string $example_property;
+	public string $example_property;
 
 	/**
 	 * @return void

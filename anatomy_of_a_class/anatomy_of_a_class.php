@@ -15,14 +15,29 @@ use Anatomy_Of_A_Class\Example;
 require __DIR__ . '/vendor/autoload.php';
 
 add_action( 'admin_notices', function () {
-	echo '<div class="notice">';
 	$example_1 = new Example();
-	$example_1->do_a_thing( true );
+	$example_2 = $example_1;
+
+	$example_2->example_property = 'anything else';
+
+	echo '<div class="notice">';
+	var_dump( $example_1 );
 	echo '</div>';
 
 	echo '<div class="notice">';
-	$example_2 = new Example();
-	$example_2->do_a_thing( true );
+	var_dump( $example_2 );
 	echo '</div>';
+
+	echo '<div class="notice">';
+
+	echo '<h4>Equal Comparison</h4>';
+	echo $example_1 == $example_2 ? 'true' : 'false';
+
+	echo '<h4>Identical Comparison</h4>';
+	echo $example_1 === $example_2 ? 'true' : 'false';
+
+	echo '</div>';
+
+	$example_3 = new Example();
 } );
 
