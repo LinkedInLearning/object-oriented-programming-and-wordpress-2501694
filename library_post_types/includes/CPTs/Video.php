@@ -1,13 +1,14 @@
 <?php
 
-class Definition_Hardware implements CPT_Definition {
+namespace Library_Post_Types\CPTs;
 
+class Video implements Definition {
 	public function name(): string {
-		return 'Hardware';
+		return 'Video';
 	}
 
 	public function slug(): string {
-		return 'hardware';
+		return 'video';
 	}
 
 	public function args(): array {

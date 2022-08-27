@@ -1,6 +1,8 @@
 <?php
 
-interface CPT_Definition {
+namespace Library_Post_Types\CPTs;
+
+interface Definition {
 
 	/**
 	 * CPT Name.
