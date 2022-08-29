@@ -12,6 +12,6 @@ abstract class Abstract_Simple_CPT implements Definition {
 		return strtolower( $this->name() );
 	}
 
-	abstract public function some_required_method(): string;
+//	abstract public function some_required_method(): string;
 
 }
