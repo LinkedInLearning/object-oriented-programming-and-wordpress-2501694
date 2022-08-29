@@ -4,9 +4,9 @@ declare( strict_types=1 );
 
 namespace Anatomy_Of_A_Class;
 
-class Singleton {
+final class Singleton {
 
-	private static Singleton $instance;
+	private static self $instance;
 
 	private function __construct() {
 	}
@@ -20,3 +20,8 @@ class Singleton {
 	}
 
 }
+
+$singleton = Singleton::getInstance();
+$singleton2 = Singleton::getInstance();
+
+var_dump( $singleton === $singleton2 ); // true
