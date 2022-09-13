@@ -1,0 +1,5 @@
+{
+  "autoload": {
+    "psr-4": {"SO_Fake_Users\\": "src/"}
+  }
+}
