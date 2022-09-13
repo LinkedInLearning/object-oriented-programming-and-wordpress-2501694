@@ -33,7 +33,7 @@ class Random_User_API {
 	 * @return \WP_User[]
 	 */
 	public function get_users(): array {
-		$response = wp_remote_get( $this->url );
+		$response = wp_remote_get( $this->build_url() );
 		$body     = wp_remote_retrieve_body( $response );
 		$data     = json_decode( $body );
 		$users    = array_map( [ $this, 'map_user' ], $data->results );
@@ -41,7 +41,7 @@ class Random_User_API {
 		return $users;
 	}
 
-	private function url() {
+	private function build_url() {
 		return $this->url . '?inc=' . implode( ',', $this->inc ) . '&results=' . $this->results;
 	}
 
