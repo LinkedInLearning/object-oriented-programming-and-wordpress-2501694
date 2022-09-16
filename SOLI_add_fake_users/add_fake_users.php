@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: SOL Add Fake Users
+ * Plugin Name: SOLI Add Fake Users
  * Description: Add fake users from the randomuser.me API
  * Version: 1.0.0
  * Requires PHP: 7.4
