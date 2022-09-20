@@ -1,13 +1,15 @@
 <?php
 
-class CPT_Register {
+namespace Library_Post_Types\CPTs;
+
+class Register {
 
 	/**
-	 * @var CPT_Definition[] $cpts
+	 * @var Definition[] $cpts
 	 */
 	private $cpts = [];
 
-	public function add( CPT_Definition $cpt ) {
+	public function add( Definition $cpt ) {
 		$this->cpts[] = $cpt;
 
 		return $this;
@@ -22,7 +24,7 @@ class CPT_Register {
 		}
 	}
 
-	private function prep_args( CPT_Definition $cpt ): array {
+	private function prep_args( Definition $cpt ): array {
 		$args = $cpt->args();
 
 		if ( ! empty( $cpt->labels() ) ) {

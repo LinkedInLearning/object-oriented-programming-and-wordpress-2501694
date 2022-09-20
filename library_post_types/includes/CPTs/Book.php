@@ -1,19 +1,22 @@
 <?php
 
-class Definition_Periodical implements CPT_Definition {
+namespace Library_Post_Types\CPTs;
+
+class Book extends Abstract_Simple_CPT {
+
 	public function name(): string {
-		return 'Periodical';
+		$this->example;
+
+		return 'Book';
 	}
-	public function slug(): string {
-		return 'periodical';
-	}
+
 	public function args(): array {
 		return [
 			'public' => true,
 		];
 	}
+
 	public function labels(): array {
 		return [];
 	}
-
 }

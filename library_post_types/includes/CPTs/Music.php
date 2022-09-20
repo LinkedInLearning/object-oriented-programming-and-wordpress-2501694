@@ -1,20 +1,19 @@
 <?php
 
-class Definition_Video implements CPT_Definition {
+namespace Library_Post_Types\CPTs;
+
+class Music implements Definition {
 	public function name(): string {
-		return 'Video';
+		return 'Music';
 	}
-
 	public function slug(): string {
-		return 'video';
+		return 'music';
 	}
-
 	public function args(): array {
 		return [
 			'public' => true,
 		];
 	}
-
 	public function labels(): array {
 		return [];
 	}

@@ -1,21 +1,19 @@
 <?php
 
-class Definition_Hardware implements CPT_Definition {
+namespace Library_Post_Types\CPTs;
 
+class Periodical implements Definition {
 	public function name(): string {
-		return 'Hardware';
+		return 'Periodical';
 	}
-
 	public function slug(): string {
-		return 'hardware';
+		return 'periodical';
 	}
-
 	public function args(): array {
 		return [
 			'public' => true,
 		];
 	}
-
 	public function labels(): array {
 		return [];
 	}
