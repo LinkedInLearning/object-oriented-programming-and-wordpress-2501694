@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-4": {"SOLID_Fake_Users_MBL_AF\\": "src/"}
+  },
+  "require-dev": {
+    "nunomaduro/phpinsights": "^2.6"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
