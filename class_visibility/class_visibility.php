@@ -26,7 +26,10 @@ add_action( 'admin_notices', function () {
 		'you can see me'
 	);
 
-	echo $property_visibility->public_property;
+	$method_visibility = new Method_Visibility( 'display me!' );
+
+	$method_visibility->display_string();
+	$method_visibility->display_string_fail();
 
 	echo '</pre></div>';
 } );

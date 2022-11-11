@@ -6,10 +6,14 @@ namespace Visibility;
 
 class Property_That_Can_Be_Changed_Externally {
 
-	public string $post_title;
+	private string $post_title;
 
 	public function get_post_title(): string {
 		return $this->post_title;
+	}
+
+	public function add_post_title( string $title ) {
+		$this->post_title = $title;
 	}
 
 }
