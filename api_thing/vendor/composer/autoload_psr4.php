@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Anatomy_Of_A_Class\\' => array($baseDir . '/src'),
+    'API_Thing\\' => array($baseDir . '/src'),
 );
