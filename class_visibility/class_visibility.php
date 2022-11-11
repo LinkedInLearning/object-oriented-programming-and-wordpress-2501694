@@ -28,13 +28,6 @@ add_action( 'admin_notices', function () {
 
 	echo $property_visibility->public_property;
 
-	$method_visibility = new Method_Visibility(
-		'I am a simple property'
-	);
-
-	$method_visibility->display_string();
-	$method_visibility->display_string_fail();
-
 	echo '</pre></div>';
 } );
 
