@@ -1,5 +1,7 @@
 {
   "autoload": {
-    "psr-4": {"Library_Post_Types\\": "includes/"}
+    "psr-4": {
+      "Library_Post_Types\\": "includes"
+    }
   }
 }

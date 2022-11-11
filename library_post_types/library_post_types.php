@@ -9,10 +9,12 @@
  * Text Domain: library-post-types
  */
 
-use Library_Post_Types\CPTs\Register as CPT_Register;
 use Library_Post_Types\CPTs\{Book,Hardware,Music,Periodical,Video};
 
-require __DIR__ . '/vendor/autoload.php';
+use Library_Post_Types\CPTs\Register as CPT_Register;
+
+
+require 'vendor/autoload.php';
 
 $cpt_register = new CPT_Register();
 $cpt_register
@@ -23,3 +25,4 @@ $cpt_register
 	->add( new Video() );
 
 add_action( 'init', [ $cpt_register, 'register' ] );
+

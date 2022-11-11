@@ -2,16 +2,14 @@
 
 namespace Library_Post_Types\CPTs;
 
-class Book extends Abstract_Simple_CPT {
+class Book implements Definition {
 
 	public function name(): string {
-//		$this->example;
-
 		return 'Book';
 	}
 
-	public function slug() :string {
-		return strtoupper( $this->name() );
+	public function slug(): string {
+		return 'book';
 	}
 
 	public function args(): array {
