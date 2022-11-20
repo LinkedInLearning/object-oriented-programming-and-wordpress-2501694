@@ -5,13 +5,38 @@ namespace S_Fake_Users;
 
 class Random_User_API {
 
-	const URL = 'https://randomuser.me/api/?inc=name,location,email,picture&results=5';
+	/**
+	 * - add_user method might need different mapping
+	 */
+
+	private string $url;
+	private array  $inc;
+	private int    $results;
+
+	public function __construct(
+		int $results = 5,
+		array $inc = [
+			'name',
+			'location',
+			'email',
+			'picture',
+		],
+		string $url = 'https://randomuser.me/api/'
+	) {
+		$this->results = $results;
+		$this->inc     = $inc;
+		$this->url     = $url;
+	}
+
+	private function build_url() {
+		return $this->url . '?inc=' . implode( ',', $this->inc ) . '&results=' . $this->results;
+	}
 
 	/**
 	 * @return \WP_User[]
 	 */
 	public function get_users(): array {
-		$response = wp_remote_get( self::URL );
+		$response = wp_remote_get( $this->build_url() );
 		$body     = wp_remote_retrieve_body( $response );
 		$data     = json_decode( $body );
 		$users    = array_map( [ $this, 'map_user' ], $data->results );
@@ -19,16 +44,15 @@ class Random_User_API {
 		return $users;
 	}
 
-	private function map_user( \stdClass $user ) : \WP_User {
-		$wp_user = new \WP_User();
+	private function map_user( \stdClass $user ): \WP_User {
+		$user_map = new User_Map();
 
-		$wp_user->user_email = $user->email;
-		$wp_user->user_login = $user->name->first . ' ' . $user->name->last;
-		$wp_user->user_pass  = wp_generate_password( 12, false );
-		$wp_user->first_name = $user->name->first;
-		$wp_user->last_name  = $user->name->last;
+		$user_map->set_email( $user->email )
+			->set_first( $user->name->first )
+			->set_last( $user->name->last)
+			->set_country( $user->location->country );
 
-		return $wp_user;
+		return $user_map->as_wp_user();
 	}
 
 }
