@@ -11,12 +11,12 @@ declare( strict_types=1 );
  */
 
 /**
- * Tools (post?)
- * - status (post_status)
- * - when due back (post_meta)
- * - who has it (!!post_meta)
- * - who is next in line (post_meta)
- * Borrower (wp_user?)
- * - what tool(s) they have (!!user_meta)
- * - what tool(s) they requested (user_meta)
+ * Tools
+ * - status
+ * - when due back
+ * - who has it
+ * - who is next in line
+ * Borrower
+ * - what tool(s) they have
+ * - what tool(s) they requested
  */
