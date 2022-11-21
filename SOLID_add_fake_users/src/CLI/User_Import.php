@@ -8,10 +8,10 @@ use SOLID_Fake_Users\User_API;
 
 class User_Import {
 
-	private User_API $user_api;
+	private Random_User_API $random_user_api;
 
-	public function __construct( User_API $user_api ) {
-		$this->user_api = $user_api;
+	public function __construct() {
+		$this->random_user_api = new Random_User_API();
 	}
 
 	public function save( $args, $assoc_args ) {
@@ -19,7 +19,7 @@ class User_Import {
 			? (int) $assoc_args['count']
 			: 5;
 
-		$users = $this->user_api->get_users( $count );
+		$users = $this->random_user_api->get_users( $count );
 
 		$progress = \WP_CLI\Utils\make_progress_bar( 'Creating users', count( $users ), $interval = 100 );
 		foreach ( $users as $user ) {
@@ -28,5 +28,4 @@ class User_Import {
 		}
 		$progress->finish();
 	}
-
 }
