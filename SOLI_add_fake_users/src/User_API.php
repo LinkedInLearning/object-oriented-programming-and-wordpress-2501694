@@ -7,5 +7,5 @@ interface User_API {
 	/**
 	 * @return User_Collection
 	 */
-	public function get_users( int $count = 5 ): User_Collection;
+	public function get_users(): User_Collection;
 }

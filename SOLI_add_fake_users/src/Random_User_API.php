@@ -9,6 +9,7 @@ class Random_User_API implements User_API {
 	private int    $results;
 
 	public function __construct(
+		int $results = 5,
 		array $inc = [
 			'name',
 			'location',
@@ -17,6 +18,7 @@ class Random_User_API implements User_API {
 		],
 		string $url = 'https://randomuser.me/api/'
 	) {
+		$this->results = $results;
 		$this->inc = $inc;
 		$this->url = $url;
 	}
@@ -24,8 +26,7 @@ class Random_User_API implements User_API {
 	/**
 	 * @return User_Collection
 	 */
-	public function get_users( int $count = 5 ): User_Collection {
-		$this->results = $count;
+	public function get_users(): User_Collection {
 		$response      = wp_remote_get( $this->build_url() );
 		$body          = wp_remote_retrieve_body( $response );
 		$data          = json_decode( $body );
