@@ -1,23 +1,14 @@
 <?php
-declare( strict_types=1 );
-
 
 namespace Library_Post_Types\CPTs;
 
-class Simple_CPT implements Definition {
-
-	private string $name;
-
-	public function __construct( string $name ) {
-		$this->name = $name;
-	}
-
+class Video implements Definition {
 	public function name(): string {
-		return $this->name;
+		return 'Video';
 	}
 
 	public function slug(): string {
-		return strtolower( $this->name() );
+		return 'video';
 	}
 
 	public function args(): array {
@@ -29,4 +20,5 @@ class Simple_CPT implements Definition {
 	public function labels(): array {
 		return [];
 	}
+
 }
