@@ -8,20 +8,22 @@ use Shorter_URL\Services\Short_URL_Call;
 
 class Shorten {
 
-	private Short_URL_Call $short_url_call;
+	private Short_URL_Call $short_URL_call;
 
-	public function __construct( Short_URL_Call $short_url_call ) {
-		$this->short_url_call = $short_url_call;
+	public function __construct( Short_URL_Call $short_URL_call ) {
+		$this->short_URL_call = $short_URL_call;
 	}
 
-	public function shorten_url( int $post_id, string $long_url ): Short_URL {
-		$request  = new Services\Short_URL_Request( $long_url );
-		$response = $this->short_url_call->shorten_url( $request );
+	public function shorten_url( int $post_id ) {
+		$short_url_request = new \Shorter_URL\Services\Short_URL_Request( get_permalink( $post_id ) );
 
-		$short_url = new Short_URL();
-		$short_url->set_post_id( $post_id )
-				  ->set_long_url( $long_url )
-				  ->set_short_url( $response->get_short_url() );
+		$short_url_response = $this->short_URL_call->shorten_url( $short_url_request );
+
+		$short_url = new \Shorter_URL\Short_URL();
+		$short_url
+			->set_post_id( $post_id )
+			->set_long_url( $short_url_request->get_long_url() )
+			->set_short_url( $short_url_response->get_short_url() );
 
 		return $short_url;
 	}

@@ -1,20 +1,23 @@
 <?php
 declare( strict_types=1 );
 
+
 namespace Shorter_URL\Display;
+
+use Shorter_URL\Short_URL;
 
 class Metabox_Display {
 
-	private \Shorter_URL\Short_URL $short_url;
+	private Short_URL $short_url;
 
-	public function __construct( \Shorter_URL\Short_URL $short_url ) {
+	public function __construct( Short_URL $short_url ) {
 		$this->short_url = $short_url;
 	}
 
 	public function display() {
 		add_meta_box(
 			'short_url',
-			'Short URL',
+			__( 'Short URL', 'shorter-urls' ),
 			[ $this, 'render' ],
 			'post',
 			'side',

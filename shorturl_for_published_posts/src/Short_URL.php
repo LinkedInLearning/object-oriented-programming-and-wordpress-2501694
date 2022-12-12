@@ -63,6 +63,4 @@ class Short_URL {
 		return $this;
 	}
 
-
-
 }
