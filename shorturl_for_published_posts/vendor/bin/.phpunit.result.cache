@@ -1,1 +1,0 @@
-{"version":1,"defects":{"Mock_Short_URL_Service_Test::test_shorten_url":4},"times":{"Short_URL_Test::test_getters_and_setters":0,"Short_URL_Request_Test::test_getters_and_setters":0.001,"Short_URL_Response_Test::test_getters_and_setters":0,"Mock_Short_URL_Service_Test::test_shorten_url":0.004}}
