@@ -12,12 +12,3 @@ declare( strict_types=1 );
  */
 
 require_once __DIR__ . '/vendor/autoload.php';
-
-//$user_count = new Stats\Endpoints\Gary_User_Count();
-
-$user_count = new \Stats\Endpoints\User_Count(
-	new \Stats\Stats\Users_By_Name(),
-	'Gary'
-);
-
-add_action( 'rest_api_init', [ $user_count, 'register' ] );
