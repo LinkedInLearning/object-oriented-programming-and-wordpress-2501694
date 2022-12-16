@@ -1,5 +1,0 @@
-{
-  "autoload": {
-    "psr-4": {"SOLID_Fake_Users\\": "src/"}
-  }
-}
